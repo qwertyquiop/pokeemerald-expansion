@@ -462,3 +462,9 @@ const u16 gObjectEventPal_StrangeBall[] = INCBIN_U16("graphics/object_events/pic
 
 const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/pics/cave_dust.4bpp");
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
+
+const u32 gObjectEventPic_Lavender[] = INCBIN_U32("graphics/object_events/pics/people/prof_lav.4bpp");
+const u16 gObjectEventPal_Lavender[] = INCBIN_U16("graphics/object_events/pics/people/prof_lav.gbapal");
+
+const u32 gObjectEventPic_Lyrica[] = INCBIN_U32("graphics/object_events/pics/people/new_gym_leaders/gym1leaderow.4bpp");
+const u16 gObjectEventPalette_Lyrica[] = INCBIN_U16("graphics/object_events/pics/people/new_gym_leaders/gym1leaderow.gbapal");

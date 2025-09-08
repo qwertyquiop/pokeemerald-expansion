@@ -26735,3 +26735,21 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
+
+const u32 gMonFrontPic_Axew_A[] = INCBIN_U32("graphics/pokemon/axew_electric/anim_front.4bpp.lz");
+const u32 gMonBackPic_Axew_A[] = INCBIN_U32("graphics/pokemon/axew_electric/back.4bpp.lz");
+const u16 gMonPalette_Axew_A[] = INCBIN_U16("graphics/pokemon/axew_electric/normal.gbapal");
+const u16 gMonShinyPalette_Axew_A[] = INCBIN_U16("graphics/pokemon/axew_electric/shiny.gbapal");
+const u8 gMonIcon_Axew_A[] = INCBIN_U8("graphics/pokemon/axew_electric/icon.4bpp");
+
+const u32 gMonFrontPic_Fraxure_A[] = INCBIN_U32("graphics/pokemon/fraxure_electric/anim_front.4bpp.lz");
+const u32 gMonBackPic_Fraxure_A[] = INCBIN_U32("graphics/pokemon/fraxure_electric/back.4bpp.lz");
+const u16 gMonPalette_Fraxure_A[] = INCBIN_U16("graphics/pokemon/fraxure_electric/normal.gbapal");
+const u16 gMonShinyPalette_Fraxure_A[] = INCBIN_U16("graphics/pokemon/fraxure_electric/shiny.gbapal");
+const u8 gMonIcon_Fraxure_A[] = INCBIN_U8("graphics/pokemon/fraxure_electric/icon.4bpp");
+
+const u32 gMonFrontPic_Haxorus_A[] = INCBIN_U32("graphics/pokemon/haxorus_electric/anim_front.4bpp.lz");
+const u32 gMonBackPic_Haxorus_A[] = INCBIN_U32("graphics/pokemon/haxorus_electric/back.4bpp.lz");
+const u16 gMonPalette_Haxorus_A[] = INCBIN_U16("graphics/pokemon/haxorus_electric/normal.gbapal");
+const u16 gMonShinyPalette_Haxorus_A[] = INCBIN_U16("graphics/pokemon/haxorus_electric/shiny.gbapal");
+const u8 gMonIcon_Haxorus_A[] = INCBIN_U8("graphics/pokemon/haxorus_electric/icon.4bpp");

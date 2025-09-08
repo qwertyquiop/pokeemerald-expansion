@@ -1,0 +1,25 @@
+mapscripts Nandta_Pokecenter_MapScripts {}
+
+script PokeCenterWoman {
+    lockall
+    faceplayer
+    msgbox ("I heard a Titan POKEMON was spotted\n"
+            "on Route 2!")
+    msgbox("Be careful if you're on your way\n"
+            "to Sunset City.")
+    releaseall
+}
+
+script PokeCenterMan {
+    lockall
+    releaseall
+    msgbox ("I'm resting before I commute.")
+    msgbox ("I work in Sunset City, so it's\n"
+            "quite the trekk, as you can imagine.")
+    releaseall
+}
+
+script NandtaNurse {
+        setrespawn(HEAL_LOCATION_NANDTA_TOWN)
+        call(SlateportCity_PokemonCenter_1F_EventScript_Nurse)
+}

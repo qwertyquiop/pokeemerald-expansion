@@ -1,0 +1,26 @@
+mapscripts NPCHouse_SSCity2_MapScripts {}
+
+script SunsetWomanWander {
+    lock
+    faceplayer
+    msgbox ("Lyrica specializes in Electric types.")
+    msgbox ("Her performances are extra lively, but\n"
+            "the electricity ruins my hair!")
+    release
+}
+
+script BoyTooLoud {
+    lock
+    faceplayer
+    msgbox ("I like to listen to Lyrica's music,\n"
+            "but the live shows are too loud for me.")
+    msgbox ("Instead of going in person, I watch\n"
+            "them on TV!")
+}
+
+script TVRecording {
+    lockall
+    msgbox ("The TV is playing a recording\n"
+            "of one of the gym leader's shows.")
+    releaseall
+}

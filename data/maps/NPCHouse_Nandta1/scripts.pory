@@ -1,0 +1,17 @@
+mapscripts NPCHouse_Nandta1_MapScripts {}
+
+script TwinFan {
+    lockall
+    faceplayer
+    msgbox ("I want to go to Sunset City to see\n"
+            "Lyrica, but my dad won't take me!")
+    releaseall
+}
+
+script NandtaDad {
+    lockall
+    faceplayer
+    msgbox ("The environment of Sunset City\n"
+            "gives me a headache...")
+    releaseall
+}

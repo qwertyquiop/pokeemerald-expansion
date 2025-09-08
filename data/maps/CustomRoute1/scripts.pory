@@ -1,0 +1,240 @@
+mapscripts CustomRoute1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: HideRival 
+}
+
+script HideRival {
+    if(flag(FLAG_UNUSED_0x023) == TRUE){
+    removeobject(5)
+    }
+}
+
+script NoPokemon {
+    getpartysize
+    if(var(VAR_RESULT) == 0){
+    lockall
+    msgbox("Can't leave without a POKEMON!")
+    applymovement(OBJ_EVENT_ID_PLAYER, GoBack)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    releaseall
+    }
+}
+
+movement GoBack {
+    face_right
+    walk_right
+}
+
+script Defeatedbugcatcher {
+    lock
+    faceplayer
+    msgbox ("Some guy came through here...\n"
+            "I challenged him to a battle but")
+    msgbox("he swept through my POKEMON...")
+    release
+}
+
+script Unarmedgirl {
+    if(flag(FLAG_UNUSED_0x022) == TRUE){
+    lock
+    faceplayer
+    msgbox("Good luck out there!")
+    releaseall
+    }
+    else{
+    lockall
+    faceplayer
+    msgbox("Oh, did you want a battle?\n"
+            "I'm not a trainer, sorry.")
+    msgbox("This might be able to help\n"
+            "you though!")
+    giveitem(ITEM_POTION, 1)
+    msgbox("Good luck out there!")
+    releaseall
+    setflag (FLAG_UNUSED_0x022)
+    }
+}
+
+script NandtaSign {
+    lockall
+    msgbox("Nandta Town Ahead")
+    releaseall
+}
+
+//trainer battle scripts
+script Route1Youngster {
+    trainerbattle_single(TRAINER_NICK_1,Youngster1Intro,YoungsterDefeat)
+    msgbox("That was fun!")
+    releaseall
+}
+
+script Route1Lass {
+    trainerbattle_single(TRAINER_MARCEL, LassIntro, LassDefeat)
+    msgbox("Nantda Town is just past this route.")
+    releaseall
+}
+
+//youngster text
+text Youngster1Intro {
+    "You're a new trainer, right? So am I!"
+}
+
+text YoungsterDefeat {
+    "Woah! Where did you even get that\n POKEMON?"
+}
+
+//lass text
+text LassIntro {
+    "Are you on your way to\n"
+    "Nantda Town too?"
+}
+
+text LassDefeat {
+    "I guess I'll need to stop by the POKEMON\n" 
+    "Center..."
+}
+
+//Rival
+script RivalGrass {
+    lockall
+    faceplayer
+    msgbox("Yo. I'm looking for POKEMON\n"
+            "right now.")
+    msgbox("I heard that you can sometimes find\n"
+            "Eevees around here,") 
+    msgbox("but I haven't had any luck.")
+    releaseall
+}
+
+script RivalEvent {
+    if (var(VAR_UNUSED_0x404E) == 0){
+    lockall
+    msgbox("Hey!")
+    applymovement(OBJ_EVENT_ID_PLAYER,PlayerDown)
+    addobject(5)
+    applymovement(5,RivalUp)
+    waitmovement(5)
+    msgbox ("You're from Seacrest right?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES){
+        msgbox("I thought so.")
+    }
+    else {
+        msgbox("Really? I thought I saw you\n"
+                "come up from that way.")
+    }
+
+    msgbox ("Anyways, my name is Ryan.")
+    msgbox ("You're... {PLAYER}, aren't you?")
+    msgbox ("We both started our journeys\n"
+        "at the same time, so why don't we battle?")
+    }
+    call (RivalBattle1)
+
+}
+
+script RivalEventLeft {
+    if (var(VAR_UNUSED_0x404E) == 0){
+    lockall
+    msgbox("Hey!")
+    applymovement(OBJ_EVENT_ID_PLAYER,PlayerLeftDown)
+    addobject(5)
+    applymovement(5,RivalUp)
+    waitmovement(5)
+    msgbox ("You're from Seacrest right?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES){
+        msgbox("I thought so.")
+    }
+    else{
+        msgbox("Really? I thought I saw you\n"
+                "come up from that way.")
+    }
+    msgbox ("Anyways, my name is Ryan.")
+    msgbox ("You're... {PLAYER}, aren't you?")
+    msgbox ("We both started our journeys\n"
+        "at the same time, so why don't we battle?")
+    }
+    call (RivalBattle1)
+
+}
+
+script RivalEventRight {
+    if (var(VAR_UNUSED_0x404E) == 0){
+    lockall
+    msgbox("Hey!")
+    applymovement(OBJ_EVENT_ID_PLAYER,PlayerRightDown)
+    addobject(5)
+    applymovement(5,RivalUp)
+    waitmovement(5)
+    msgbox ("You're from Seacrest right?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES){
+        msgbox("I thought so.")
+    }
+    else {
+        msgbox("Really? I thought I saw you\n"
+                "come up from that way.")
+    }
+    msgbox ("Anyways, my name is Ryan.")
+    msgbox ("You're... {PLAYER}, aren't you?")
+    msgbox ("We both started our journeys\n"
+            "at the same time, so why don't we battle?")
+    }
+    call (RivalBattle1)
+
+}
+
+text RivalDefeat1 {
+    "Looks like I need more training..."
+}
+
+script RivalBattle1{
+    trainerbattle_no_intro(TRAINER_BRENDAN_ROUTE_103_MUDKIP, RivalDefeat1)
+    call(RivalBattleOver1)
+}
+
+
+script RivalBattleOver1 {
+    lockall
+    msgbox("You're pretty strong!")
+    msgbox("I'm on my way to Sunset City\n"
+            "to challenge the gym leader.")
+    msgbox("Maybe we'll run into eachother there.")
+    msgbox("Oh, and I have something that might\n"
+            "be useful for you.")
+    giveitem(ITEM_EXP_SHARE)
+    msgbox("Anyways, see you later!")
+    applymovement(5, RivalLeave)
+    waitmovement(5)
+    removeobject(5)
+    setvar(VAR_UNUSED_0x404E, 1)
+    releaseall
+}
+
+movement RivalUp {
+    walk_up * 6
+}
+
+movement RivalLeave {
+    face_right
+    walk_right
+    face_up
+    walk_up * 7
+}
+
+movement PlayerDown {
+    emote_exclamation_mark
+    face_down    
+}
+
+movement PlayerRightDown {
+    emote_exclamation_mark
+    face_right
+    walk_right
+    face_down
+    
+}
+
+movement PlayerLeftDown {
+    emote_exclamation_mark
+    face_left
+    walk_left
+    face_down
+}

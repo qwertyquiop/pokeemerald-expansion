@@ -1,0 +1,98 @@
+mapscripts SunsetGymStage_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_3, 0: LeaderCutscene
+    ]
+}
+
+script LeaderCutscene {
+    applymovement(OBJ_EVENT_ID_PLAYER, MoveToStage)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox("Hey hey! I'm Lyrica!")
+    applymovement(23,FaceCrowd)
+    waitmovement(23)
+    msgbox("Everyone!! Are you ready?!")
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PanUp)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    msgbox("Audience: Woooo!!!")
+    applymovement(OBJ_EVENT_ID_CAMERA,CameraRevert)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    applymovement(23,FaceCrowd)
+    waitmovement(23)
+    msgbox("Keep your eyes on me, 'kay~?")
+    special(RemoveCameraObject)
+    applymovement(23, FaceYou)
+    waitmovement(23)
+    msgbox("I use the endearing ELECTRIC type!")
+    msgbox("With our shocking moves, we'll be sure\n"
+            "to knock your socks off!")
+    msgbox("Now, let's get started, shall we?")
+    call(SunsetBattleScript)
+}
+
+script SunsetBattleScript {
+msgbox("Show me your best!")
+trainerbattle_no_intro(TRAINER_LYRICA_1, LyricaDefeat)
+call(PostBattleLyrica)
+}
+
+//Camera Movement
+
+movement PanUp {
+    walk_up * 12
+}
+
+movement CameraRevert {
+    walk_fast_down * 12
+}
+
+//Cutscene Movement
+movement MoveToStage {
+    face_up
+    walk_up * 6
+    face_right
+    walk_right * 11
+
+}
+movement FaceCrowd {
+    face_up
+    jump_in_place_up * 2
+}
+
+movement FaceYou {
+    face_left
+}
+movement PlayerWalk {
+    face_left
+    walk_left * 1
+    face_right
+}
+
+movement LeaderWalk {
+    face_right
+    walk_right * 1
+    face_left
+
+}
+
+text LyricaDefeat {
+    "What an electrifying victory!"  
+}
+
+script PostBattleLyrica {
+    msgbox("You totally stomped me!")
+    msgbox("Congratulations on your first gym\n" 
+            "victory!")
+    msgbox("Take this badge as proof of\n"
+            "your efforts.")
+    msgbox("{PLAYER} recieved the Thunderheart Badge!")
+    setflag(FLAG_BADGE01_GET)
+    playfanfare(MUS_OBTAIN_BADGE)
+    waitfanfare
+    msgbox("Take this TM too! It's one of my faves!")
+    giveitem(ITEM_TM34)
+    msgbox("That's pretty much all I have for you.\n"
+            "Thanks for the amazing performance!")
+    fadescreen(FADE_TO_BLACK)
+    warpsilent(MAP_SUNSET_GYM, 14, 4)
+}

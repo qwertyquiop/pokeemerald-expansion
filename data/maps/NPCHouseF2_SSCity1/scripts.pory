@@ -1,0 +1,23 @@
+mapscripts NPCHouseF2_SSCity1_MapScripts {}
+
+script BlackBeltSunset {
+    if(flag(FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS) == FALSE){
+    lock
+    faceplayer
+    msgbox("The gym leader here has quite\n"
+            "the singing voice.")
+    msgbox("Her POKEMON pack a punch, too.")
+    msgbox("Take this! It will help you match her\n"
+            "power!")
+    giveitem(ITEM_SOFT_SAND)
+    setflag(FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS)
+    release
+    }
+    else {
+    lock
+    faceplayer
+    msgbox ("Good luck getting that badge challenger!\n"
+            "Show that leader who's boss!")
+    release
+    }
+}

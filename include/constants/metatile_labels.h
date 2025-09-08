@@ -272,6 +272,9 @@
 #define METATILE_Lavaridge_NormalGrass          0x206
 #define METATILE_Lavaridge_RockWall             0x274
 
+// gTileset_LeoB_ORAS
+#define METATILE_LeoB_ORAS_CalmWater  0x170
+
 // gTileset_Lilycove
 #define METATILE_Lilycove_Door             0x246
 #define METATILE_Lilycove_Door_DeptStore   0x30C
@@ -389,7 +392,7 @@
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
 
 // gTileset_Petalburg
-#define METATILE_Petalburg_Door_BirchsLab   0x249
+#define METATILE_Petalburg_Door_BirchsLab   0x252
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
 

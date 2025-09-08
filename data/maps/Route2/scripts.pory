@@ -1,0 +1,214 @@
+mapscripts Route2_MapScripts {}
+
+//Items
+script AmuletcoinBall{
+    lockall
+    giveitem(ITEM_AMULET_COIN)
+    setflag(FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL)
+    removeobject(1)
+    releaseall
+}
+
+script ReviveBall {
+    lockall
+    giveitem(ITEM_REVIVE)
+    setflag(FLAG_ITEM_ROUTE_117_REVIVE)
+    removeobject(2)
+    releaseall
+}
+
+script MysticwaterBall{
+    lockall
+    giveitem(ITEM_MYSTIC_WATER)
+    setflag(FLAG_ITEM_ROUTE_111_ELIXIR)
+    removeobject(3)
+    releaseall
+}
+
+script SunsetSign {
+    lockall
+    msgbox("Tunnel to Sunset City")
+    releaseall
+}
+
+//Trainers
+script Edwin_Route2 {
+    trainerbattle_single(TRAINER_EDWIN_1,Edwin2_Intro,Edwin2_Loss)
+    msgbox("My mom forced me to come out here.")
+    releaseall
+}
+
+script Hudson_Route2 {
+    trainerbattle_single(TRAINER_HUDSON,Hudson_Intro,Hudson_Outro)
+    msgbox("Who did you pay to train yours?")
+    releaseall
+}
+
+script Reyna_Route2 {
+    trainerbattle_single(TRAINER_REYNA,Reyna_Intro,Reyna_Outro)
+    msgbox("I caught my Vulpix on this route!")
+    releaseall
+}
+
+//Trainer Text
+text Edwin2_Intro {
+    "This route is good for fresh air!"
+}
+
+text Edwin2_Loss {
+    "Oh..."
+}
+
+text Hudson_Intro {
+    "I paid a professional to train my POKEMON!"
+}
+
+text Hudson_Outro {
+    "...I think I got scammed."
+}
+
+text Reyna_Intro {
+    "I came out here to find some cute POKEMON!"
+}
+
+text Reyna_Outro {
+    "Oh no! My POKEMON!"
+}
+
+//NPC
+script Sandboy{
+    lockall
+    faceplayer
+    msgbox("It's fun, playing in the sand!")
+    releaseall
+}
+
+//Titan
+script TitanRockruff {
+    if(flag(FLAG_UNUSED_0x02A) == FALSE) {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, PlayerCalledOut)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox ("H-Hey! You! Down there!")
+    msgbox ("I was hiking and this Titan cornered me!")
+    msgbox ("I don't have any POKEMON! Please help!")
+    playmoncry (SPECIES_ROCKRUFF, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    msgbox ("Gahhh!! Hurry! Please!")
+    applymovement(OBJ_EVENT_ID_PLAYER, PlayerGottaHelp)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    releaseall
+    }
+}
+
+script TriggerBattle {
+    if(flag(FLAG_SYS_CAVE_BATTLE) == FALSE) {
+    lock
+    msgbox("Thank goodness you're here!")
+    msgbox("I have no idea what it wants from me!")
+    msgbox("Help the man?",MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+    applymovement(OBJ_EVENT_ID_PLAYER, MoveToRockruff)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    call(RockruffBattle)
+    }
+    else {
+    applymovement(OBJ_EVENT_ID_PLAYER, PlayerGottaHelp)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox("Wait, what?")
+    msgbox("Where are you going?!")
+    releaseall
+    }
+    }
+}
+
+script RockruffBattle {
+    lockall
+    applymovement(4,RockruffFace)
+    msgbox("Ruff!!")
+    applymovement(4, RockruffStance)
+    playmoncry (SPECIES_ROCKRUFF, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(B_FLAG_NO_CATCHING)
+    setflag(B_FLAG_NO_RUNNING)
+    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 0, 0, 0, 0, 0,)
+    setwildbattle(SPECIES_ROCKRUFF,10,item=ITEM_NONE)
+    dowildbattle
+    specialvar(VAR_RESULT,GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        call (PostBattleRockruff)
+    }
+
+
+}
+
+script HikerRockruffPost {
+    lockall
+    applymovement(5, HikerApproach)
+    waitmovement(5)
+    msgbox("Thanks for saving me! I thought I was\n"
+            "a goner!")
+    msgbox("Here, take this.")
+    msgbox("I found it on a hike earlier,\n"
+            "but I think you should have it.")
+    waitmessage
+    giveitem(ITEM_NUGGET)
+    msgbox("Maybe I should catch a POKEMON\n"
+            "to defend myself...")
+    applymovement (5, HikerLeave)
+    waitmovement(5)
+    removeobject(5)
+    setflag(FLAG_UNUSED_0x02A)
+    setflag(FLAG_SYS_CAVE_BATTLE)
+    releaseall
+
+}
+
+script PostBattleRockruff {
+    lockall
+    clearflag(B_FLAG_NO_CATCHING)
+    clearflag(B_FLAG_NO_RUNNING)
+    playmoncry (SPECIES_ROCKRUFF, CRY_MODE_WEAK)
+    waitmoncry
+    removeobject(4)
+    call(HikerRockruffPost)
+    releaseall
+}
+
+movement MoveToRockruff {
+    face_up
+    walk_up
+    face_left
+    walk_left * 4
+}
+
+movement RockruffStance {
+    jump_in_place_right * 2
+}
+
+movement PlayerCalledOut {
+    emote_exclamation_mark 
+}
+
+movement RockruffFace {
+    face_right
+    
+}
+
+movement PlayerGottaHelp {
+    face_down
+    walk_down
+}
+
+movement HikerApproach {
+    walk_right
+}
+
+movement HikerLeave {
+    face_down
+    walk_down
+    face_right
+    walk_right * 5
+    face_down 
+    walk_down * 5
+}

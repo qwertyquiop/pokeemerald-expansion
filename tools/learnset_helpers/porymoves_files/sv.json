@@ -98008,5 +98008,184 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": []
+  },
+  "AXEW_A": {
+    "LevelMoves": [
+      {
+        "Level": 3,
+        "Move": "MOVE_SCRATCH"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 10,
+        "Move": "MOVE_THUNDER_SHOCK"
+      },
+      {
+        "Level": 12,
+        "Move": "MOVE_CHARGE"
+      },
+      {
+        "Level": 13,
+        "Move": "MOVE_DRAGON_BREATH"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SHOCK_WAVE"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_BITE"
+      },
+      {
+        "Level": 32,
+        "Move": "MOVE_THUNDER_FANG"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_THUNDER"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_BARRIER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_SHOCK_WAVE",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+
+  "FRAXURE_A": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_THUNDER_SHOCK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "Level": 39,
+        "Move": "MOVE_DRAGON_BREATH"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_CALM_MIND"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_THUNDERCLAP"
+      },
+      {
+        "Level": 55,
+        "Move": "MOVE_DRAGON_PULSE"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_BARRIER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_SHOCK_WAVE",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
+  },
+
+    "HAXORUS_A": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_THUNDER_SHOCK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "Level": 39,
+        "Move": "MOVE_DRAGON_BREATH"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_CALM_MIND"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_THUNDERCLAP"
+      },
+      {
+        "Level": 53,
+        "Move": "MOVE_BOOMBURST"
+      },
+      {
+        "Level": 55,
+        "Move": "MOVE_DRAGON_PULSE"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_BARRIER"
+      },
+      {
+      "Level": 70,
+        "Move": "MOVE_FLAMETHROWER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_SHOCK_WAVE",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT"
+    ],
+    "EggMoves": [],
+    "TutorMoves": []
   }
+
+
 }

@@ -35838,3 +35838,30 @@ static const u16 sPecharuntTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PECHARUNT
+
+static const u16 sAxewATeachableLearnset[] = {
+    MOVE_LIGHT_SCREEN,
+    MOVE_SHOCK_WAVE,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sFraxureATeachableLearnset[] = {
+    MOVE_CALM_MIND,
+    MOVE_LIGHT_SCREEN,
+    MOVE_SHOCK_WAVE,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHaxorusATeachableLearnset[] = {
+    MOVE_CALM_MIND,
+    MOVE_FLAMETHROWER,
+    MOVE_LIGHT_SCREEN,
+    MOVE_SHOCK_WAVE,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_UNAVAILABLE,
+};

@@ -1,0 +1,41 @@
+mapscripts SunsetCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RemoveGrunts
+}
+
+script BiggerThanItLooks {
+    lock
+    faceplayer
+    msgbox ("The gym looks small on the outside, but\n"
+            "the inside is bigger than you'd think.")
+    release
+}
+
+script SunsetGrunt1 {
+    lock
+    faceplayer
+    msgbox("What? A guy can't loiter with his pals\n"
+            "nowadays?")
+    releaseall
+}
+
+script SunsetGrunt2 {
+    lock
+    faceplayer
+    msgbox("Get lost, kid.")
+    releaseall
+}
+
+script SunsetGrunt3 {
+    lock
+    faceplayer
+    msgbox("Don't you have better things to do?")
+    releaseall
+}
+
+script RemoveGrunts {
+    if (flag(FLAG_BADGE01_GET) == TRUE) {
+        removeobject(2)
+        removeobject(4)
+        removeobject(3)
+    }
+}

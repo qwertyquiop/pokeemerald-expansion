@@ -1,0 +1,85 @@
+mapscripts SunsetGym_MapScripts {}
+
+script SunsetReceptionist {
+    lock
+    msgbox("Welcome to the Sunset Theatre!")
+    msgbox("If you're here to challenge the gym\n"
+            "leader,")
+    msgbox("you'll need to defeat the trainers\n"
+            "in queue ahead of you.")
+    releaseall
+}
+
+script SunsetGymGuide {
+    lock
+    if(flag(FLAG_ITEM_RUSTBORO_CITY_X_DEFEND) == FALSE) {
+    msgbox("Hey! Is this your first time in the gym?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+    msgbox("Well, allow me to give you some advice.")
+    msgbox("The gym leader, Lyrica uses Electric\n"
+            "types to leave a shocking impression!")
+    msgbox("It would do you some good to bring some\n" 
+            "ground types!")
+    msgbox("Also, take this, on me. Think of it as\n"
+            "a ''good luck charm.''")
+    giveitem(ITEM_FRESH_WATER)
+    setflag(FLAG_ITEM_RUSTBORO_CITY_X_DEFEND)
+    }
+    else{
+    msgbox("Well, then you probably don't need\n"
+            "my help!")
+    }
+    }
+    else {
+    lock
+    msgbox ("Go show 'em what you can do!")
+    }
+    releaseall
+}
+
+script SunsetGuard {
+    lock
+    msgbox("...")
+    msgbox("...Doesn't seem to be in the mood\n"
+            "for conversation...")
+    releaseall
+}
+
+movement StepAside {
+    face_left
+    walk_left
+    face_down
+}
+
+
+//Gym Trainers
+script ZanderGymTrainer {
+    trainerbattle_single(TRAINER_ZANDER, ZanderIntro, ZanderOutro)
+    msgbox ("I need to catch more POKEMON.")
+    releaseall
+}
+
+script LeahGymTrainer {
+    trainerbattle_single(TRAINER_LEAH, LeahIntro, LeahOutro)
+    msgbox ("They say it's never too late, right?")
+    releaseall
+}
+
+//Gym Trainers Text
+text ZanderIntro {
+    "I'm going to beat you, then I'm going\n"
+    "to beat Lyrica!"
+}
+
+text ZanderOutro {
+    "Well, shoot."
+}
+
+text LeahIntro {
+    "You're probably wondering why I want\n"
+    "to challenge the gym at my age, right?"
+}
+
+text LeahOutro {
+    "Well, I wanted to broaden my horizons!"
+}

@@ -1,0 +1,133 @@
+mapscripts SUNSETCITY_POKECENTER_MapScripts {}
+
+//Gen 7 Starter Event
+script GiftMonNickname {
+    msgbox ("Nickname your POKEMON?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+	call (Common_EventScript_GetGiftMonPartySlot)
+	call (Common_EventScript_NameReceivedPartyMon)
+    }
+}
+script AlolaStarters {
+    if (flag(FLAG_UNUSED_0x025) == FALSE) {
+    lock
+    faceplayer
+    msgbox ("Hey kid!")
+    msgbox ("You know... Sunset City reminds me\n"
+            "of a certain other place in the world...")
+    msgbox ("Somewhere tropical...")
+    msgbox ("I can't quite put my finger on it though.")
+    message ("Mind helping me out?")
+    waitmessage
+    dynmultichoice(
+        0, // Tiles from left
+        0, // Tiles from top
+        TRUE, // Ignore B press
+        2, // Max options before scroll
+        0, // Initial selected option
+        DYN_MULTICHOICE_CB_NONE, // Callbacks
+        "Alola", // Choice 1
+        "I don't know" // Choice 2
+    )
+
+    if (var(VAR_RESULT) == 0){
+    call (AlolaGift)
+    }
+    elif (var(VAR_RESULT) == 1) {
+    msgbox ("Well, if you remember, you know\n"
+            "where to find me!")
+    }
+    release
+    }
+    else {
+    lock
+    faceplayer
+    msgbox ("How's that POKEMON treating you?")
+    release
+    }
+}
+
+script AlolaGift {
+    msgbox("Yeah! Thats it!")
+    msgbox("Now, I have three rare POKEMON\n"
+            "from the Alola region.")
+    call(AlolaChoice)
+}
+
+script AlolaChoice {
+    message("Why don't you take your pick?")
+    waitmessage
+    dynmultichoice(
+        0, // Tiles from left
+        0, // Tiles from top
+        TRUE, // Ignore B press
+        3, // Max options before scroll
+        0, // Initial selected option
+        DYN_MULTICHOICE_CB_NONE, // Callbacks
+        "Rowlet", // Choice 1
+        "Litten", // Choice 2
+        "Popplio" // Choice 3, etc
+    )
+    if (var(VAR_RESULT) == 0) {
+        msgbox ("So you want Rowlet?", MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox ("Alright! Train them up nice and strong!")
+                givemon(SPECIES_ROWLET, 10, ITEM_ORAN_BERRY)
+                msgbox ("{PLAYER} recieved Rowlet!")
+                playfanfare(MUS_OBTAIN_ITEM)
+                call(GiftMonNickname)
+            }
+            else {
+                msgbox ("Think it over carefully!")
+                call(AlolaChoice)
+            }
+    }
+
+    if (var(VAR_RESULT) == 1) {
+        msgbox ("So you want Litten?", MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox ("Alright! Train them up nice and strong!")
+                givemon(SPECIES_LITTEN, 10, ITEM_ORAN_BERRY)
+                msgbox ("{PLAYER} recieved Litten!")
+                playfanfare(MUS_OBTAIN_ITEM)
+                call(GiftMonNickname)
+                
+            }
+            else {
+                msgbox ("Think it over carefully!")
+                call(AlolaChoice)
+            }
+    }
+
+    if (var(VAR_RESULT) == 2) {
+        msgbox ("So you want Popplio?", MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox ("Alright! Train them up nice and strong!")
+                givemon(SPECIES_POPPLIO, 10, ITEM_ORAN_BERRY)
+                msgbox ("{PLAYER} recieved Popplio!")
+                playfanfare(MUS_OBTAIN_ITEM)
+                call(GiftMonNickname)
+            }
+            else {
+                msgbox ("Think it over carefully!")
+                call(AlolaChoice)
+            }
+    }
+setflag(FLAG_UNUSED_0x025)
+release
+}
+
+script PokeCenterGirlSS {
+    lock
+    faceplayer
+    msgbox ("I heard that there's a commotion\n"
+            "in Evergreen forest.")
+    msgbox ("I wonder what's happening?")
+    release
+}
+
+script SunsetNurse {
+    setrespawn(HEAL_LOCATION_SUNSET_CITY)
+    call(SlateportCity_PokemonCenter_1F_EventScript_Nurse)
+}
+

@@ -1,0 +1,19 @@
+raw `
+RivalHouse_MapScripts::
+	.byte 0
+`
+script Rivalsister {
+    lockall
+    faceplayer
+    msgbox ("Hi, {PLAYER}!")
+    releaseall
+}
+
+script Rivalmother {
+    lockall
+    faceplayer
+    msgbox ("Are you looking for Ryan?\n")
+    msgbox ("He just left. He said that he was going\n"
+            "on a journey to collect the gym badges...")
+    releaseall
+}

@@ -1,0 +1,103 @@
+raw `
+Player_house_MapScripts::
+	.byte 0
+`
+script TV_Interact {
+	lockall
+	msgbox("It's playing a drama about\n"
+			"a trainer who lost their POKEMON.")
+	releaseall	
+}
+	
+script Kitchen_Shelf_Interact {
+	lockall
+	msgbox("It's lined with recipe books that\n"
+			"mom doesn't use anymore.")
+	releaseall	
+}
+
+script ObservePlants {
+	lockall
+	msgbox("Flowers that mom bought while\n"
+			"she was shopping.")
+	msgbox("She takes great care of them.")
+	releaseall
+	
+}
+
+script Mom_Idle_Dialogue {
+	getpartysize
+	lockall
+
+    if(var(VAR_RESULT) >= 1){
+    faceplayer
+	msgbox ("You look tired, have a rest.")
+	fadescreen(FADE_TO_BLACK)
+	special (HealPlayerParty)
+	playse(MUS_HEAL)
+	delay(60)
+	fadescreen(FADE_FROM_BLACK)
+	msgbox ("Have fun out there!")
+	releaseall
+	}
+
+    else {
+    faceplayer
+	msgbox("Did you go to see\n"
+			"Professor Lavender yet?") 
+    }
+	releaseall
+	applymovement(1, MomLikesTV) 
+}
+
+script GameStart {
+    lock
+    applymovement(1, MomFace)
+    waitmovement(1)
+    msgbox("Oh! You're awake!")
+    applymovement(OBJ_EVENT_ID_PLAYER, Whatdidyousay)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+	applymovement(1, MomWalk)
+	waitmovement(1)
+    msgbox("You know you're supposed to meet\n"
+			"the professor today right?")
+    msgbox("You should hurry over... I don't\n"
+            "think she specified a time,")
+    msgbox("but it's better to be safe than sorry.")
+	msgbox("Oh, and take your running shoes too!")
+	playse(MUS_OBTAIN_ITEM)
+	msgbox("{PLAYER} recieved running shoes!")
+	setflag(FLAG_RECEIVED_RUNNING_SHOES)
+	setflag(FLAG_SYS_B_DASH)
+    applymovement(1, MomWantsTV)
+    waitmovement(1)
+	setvar(VAR_UNUSED_0x4083, 1)
+    release
+}
+
+
+movement MomLikesTV {
+	face_up
+}
+
+movement Whatdidyousay {
+	face_down
+}
+
+//Game Start
+movement MomFace {
+	emote_exclamation_mark
+	face_left
+}
+
+movement MomWalk {
+	face_left
+	walk_left * 2
+	walk_up 
+}
+
+movement MomWantsTV {
+	walk_down
+	walk_right * 2
+	face_up
+}

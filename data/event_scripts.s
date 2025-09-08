@@ -1157,3 +1157,68 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+
+	.include "data/maps/Home_Town/scripts.inc"
+
+	.include "data/maps/Starter_Town/scripts.inc"
+
+	.include "data/maps/Player_house/scripts.inc"
+
+	.include "data/maps/Player_room/scripts.inc"
+
+	.include "data/maps/Lav_lab/scripts.inc"
+
+	.include "data/maps/RivalHouse/scripts.inc"
+
+	.include "data/maps/NPCHouse/scripts.inc"
+
+	.include "data/maps/CustomRoute1/scripts.inc"
+
+	.include "data/maps/TestMap/scripts.inc"
+
+	.include "data/maps/NandtaTown/scripts.inc"
+
+	.include "data/maps/NPCHouse_Nandta1/scripts.inc"
+
+	.include "data/maps/Nandta_Mart/scripts.inc"
+
+	.include "data/maps/NPCHouse_Nandta2/scripts.inc"
+
+	.include "data/maps/NPCHouse_Nandta3/scripts.inc"
+
+	.include "data/maps/Nandta_Pokecenter/scripts.inc"
+
+	.include "data/maps/Route2/scripts.inc"
+
+	.include "data/maps/SunsetTunnel/scripts.inc"
+
+	.include "data/maps/SunsetCity/scripts.inc"
+
+	.include "data/maps/SunsetMart/scripts.inc"
+
+	.include "data/maps/SUNSETCITY_POKECENTER/scripts.inc"
+
+	.include "data/maps/NPCHouse_SSCity1/scripts.inc"
+
+	.include "data/maps/NPCHouseF2_SSCity1/scripts.inc"
+
+	.include "data/maps/NPCHouse_SSCity2/scripts.inc"
+
+	.include "data/maps/NPCHouseF2_SSCity2/scripts.inc"
+
+	.include "data/maps/Route3/scripts.inc"
+
+
+	.include "data/maps/NPCHouse_SSCity3/scripts.inc"
+
+	.include "data/maps/NPCHouseF2_SSCity4/scripts.inc"
+
+	.include "data/maps/NPCHouseF2_SSCity3/scripts.inc"
+
+	.include "data/maps/NPCHouse_SSCity4/scripts.inc"
+
+	.include "data/maps/SunsetGym/scripts.inc"
+
+	.include "data/maps/SunsetGymStage/scripts.inc"
+
+	.include "data/maps/ShadedForest/scripts.inc"

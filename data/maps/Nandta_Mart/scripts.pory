@@ -1,0 +1,8 @@
+mapscripts Nandta_Mart_MapScripts {}
+
+script Nandta_Mart_NPC1 {
+    lockall
+    faceplayer
+    msgbox ("I'm looking for potions.")
+    releaseall
+}

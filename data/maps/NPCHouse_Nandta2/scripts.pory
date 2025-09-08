@@ -1,0 +1,11 @@
+mapscripts NPCHouse_Nandta2_MapScripts {}
+
+script Nandta_OldWoman {
+    lockall
+    faceplayer
+    msgbox ("I've lived here since I was\n"
+            "a little girl.")
+    msgbox ("It's a quiet town, and the other\n"
+            "cities aren't to my liking.")
+    releaseall
+}

@@ -207,3 +207,30 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_LeoB_ORAS[] = INCBIN_U16("data/tilesets/primary/leo_b_oras/metatiles.bin");
+const u16 gMetatileAttributes_LeoB_ORAS[] = INCBIN_U16("data/tilesets/primary/leo_b_oras/metatile_attributes.bin");
+
+const u16 gMetatiles_LeoB_LITTLEROOT[] = INCBIN_U16("data/tilesets/secondary/leo_b_littleroot/metatiles.bin");
+const u16 gMetatileAttributes_LeoB_LITTLEROOT[] = INCBIN_U16("data/tilesets/secondary/leo_b_littleroot/metatile_attributes.bin");
+
+const u16 gMetatiles_GEN4_Interior[] = INCBIN_U16("data/tilesets/primary/gen4_interior/metatiles.bin");
+const u16 gMetatileAttributes_GEN4_Interior[] = INCBIN_U16("data/tilesets/primary/gen4_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_gen4_interior[] = INCBIN_U16("data/tilesets/secondary/gen_4_interior/metatiles.bin");
+const u16 gMetatileAttributes_gen4_interior[] = INCBIN_U16("data/tilesets/secondary/gen_4_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_GeneralCustom[] = INCBIN_U16("data/tilesets/primary/general_custom/metatiles.bin");
+const u16 gMetatileAttributes_GeneralCustom[] = INCBIN_U16("data/tilesets/primary/general_custom/metatile_attributes.bin");
+
+const u16 gMetatiles_GeneralTown[] = INCBIN_U16("data/tilesets/primary/general_town/metatiles.bin");
+const u16 gMetatileAttributes_GeneralTown[] = INCBIN_U16("data/tilesets/primary/general_town/metatile_attributes.bin");
+
+const u16 gMetatiles_SecondaryTown[] = INCBIN_U16("data/tilesets/secondary/secondary_town/metatiles.bin");
+const u16 gMetatileAttributes_SecondaryTown[] = INCBIN_U16("data/tilesets/secondary/secondary_town/metatile_attributes.bin");
+
+const u16 gMetatiles_City[] = INCBIN_U16("data/tilesets/secondary/city/metatiles.bin");
+const u16 gMetatileAttributes_City[] = INCBIN_U16("data/tilesets/secondary/city/metatile_attributes.bin");
+
+const u16 gMetatiles_SecondaryCity[] = INCBIN_U16("data/tilesets/secondary/secondary_city/metatiles.bin");
+const u16 gMetatileAttributes_SecondaryCity[] = INCBIN_U16("data/tilesets/secondary/secondary_city/metatile_attributes.bin");

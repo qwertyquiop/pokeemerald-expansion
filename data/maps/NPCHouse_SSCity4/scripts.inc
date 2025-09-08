@@ -1,0 +1,3 @@
+NPCHouse_SSCity4_MapScripts::
+	.byte 0
+

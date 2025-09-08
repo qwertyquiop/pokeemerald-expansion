@@ -131,6 +131,48 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_HOME_TOWN",
+      "map": "MAP_HOME_TOWN",
+      "x": 39,
+      "y": 5
+    },
+    {
+      "id": "HEAL_LOCATION_NPCHOUSE",
+      "map": "MAP_NPCHOUSE",
+      "x": 7,
+      "y": 7
+    },
+    {
+      "id": "HEAL_LOCATION_SLATEPORT_CITY_MART",
+      "map": "MAP_SLATEPORT_CITY_MART",
+      "x": 5,
+      "y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_SLATEPORT_CITY_POKEMON_CENTER_1F",
+      "map": "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F",
+      "x": 6,
+      "y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE2",
+      "map": "MAP_ROUTE2",
+      "x": 13,
+      "y": 8
+    },
+    {
+      "id": "HEAL_LOCATION_NANDTA_TOWN",
+      "map": "MAP_NANDTA_TOWN",
+      "x": 3,
+      "y": 5
+    },
+    {
+      "id": "HEAL_LOCATION_SUNSET_CITY",
+      "map": "MAP_SUNSET_CITY",
+      "x": 9,
+      "y": 14
     }
   ]
 }

@@ -1,0 +1,34 @@
+raw `
+Player_room_MapScripts::
+	.byte 0
+`
+
+script WarpOptions {
+	lock
+	msgbox("Gave POKEMON!")
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	givemon(SPECIES_SYLVEON,20)
+	msgbox("Warp where?")
+    dynmultichoice(
+        0, // Tiles from left
+        0, // Tiles from top
+        TRUE, // Ignore B press
+        3, // Max options before scroll
+        0, // Initial selected option
+        DYN_MULTICHOICE_CB_NONE, // Callbacks
+        "Nandta Town", // Choice 1
+        "Sunset City", // Choice 2
+        "Do not Warp" // Choice 3, etc
+	)	
+	if(var(VAR_RESULT) == 0) {
+		warp(MAP_NANDTA_TOWN, 3, 5)
+	}
+	if(var(VAR_RESULT) == 1) {
+		warp(MAP_SUNSET_CITY, 4, 6)
+	}
+	if(var(VAR_RESULT) == 2){
+		msgbox ("Butts")
+	}
+	releaseall
+}

@@ -1,0 +1,12 @@
+mapscripts NPCHouse_Nandta3_MapScripts {}
+
+script NandtaBoy {
+    lockall
+    msgbox ("I'm reading about Titan POKEMON.")
+    msgbox ("Apparently, there are Titans in the\n"
+            "Paldea region too.")
+    msgbox ("However, instead of a size difference,\n"
+            "the Titans here are just plain stronger.")
+    msgbox ("At least, that's what I've read!")
+    releaseall
+}

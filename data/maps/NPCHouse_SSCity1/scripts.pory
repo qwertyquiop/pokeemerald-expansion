@@ -1,0 +1,12 @@
+mapscripts NPCHouse_SSCity1_MapScripts {}
+
+script ChefCramped {
+    lock
+    faceplayer
+    msgbox ("I moved out of my small town\n"
+            "to the big city to pursue my dreams.")
+    msgbox ("I haven't really had any luck landing a\n"
+            "job, and this apartment is kind of small.")
+    msgbox ("At least I have easy access to the beach.")
+    release
+}

@@ -56,7 +56,7 @@ The windows appear as normal during the day time (blue) and light up in the nigh
 A: Set `OW_OBJECT_VANILLA_SHADOWS` to `TRUE` in `include/config/overworld.h`.
 
 ### Q: What graphical errors are likely to occur while using DNS?
-A: If you have `OW_POPUP_GENERATION` set to `GEN_5` and `OW_POPUP_BW_ALPHA_BLEND` set to `TRUE`, you may have color errors during map popups. This is due to the GBA being severely limited in use of color blending and having both the overworld blended and the popup blended is difficult.
+A: If you have `OW_POPUP_GENERATION` set to `GEN_5` and `` set to `TRUE`, you may have color errors during map popups. This is due to the GBA being severely limited in use of color blending and having both the overworld blended and the popup blended is difficult.
 
 If you have `OW_OBJECT_VANILLA_SHADOWS` set to `TRUE`, this will also cause visual errors.
 

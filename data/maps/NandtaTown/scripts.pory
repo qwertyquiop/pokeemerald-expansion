@@ -1,0 +1,24 @@
+mapscripts NandtaTown_MapScripts {}
+
+script FatGuy_Nandta {
+    lock
+    faceplayer
+    msgbox ("I heard that a Rockruff was causing\n"
+            "trouble up ahead, on Route 2.")
+    msgbox ("Apparently it might be a Titan,\n"
+            "or so I've heard.")
+    release
+}
+
+script Girl_Nandta {
+    lock
+    faceplayer
+    msgbox ("I want to go to the beach\n"
+            "at Sunset City.")
+    msgbox ("My dad won't let me go because\n"
+            "''it's dangerous to go alone.''")
+    msgbox ("Ugh! Can you believe that?")
+    msgbox ("It sounds like something a video\n"
+            "game character would say.")
+    release
+}

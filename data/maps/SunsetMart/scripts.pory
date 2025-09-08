@@ -1,0 +1,11 @@
+mapscripts SunsetMart_MapScripts {}
+
+script BugCatcherChallenger {
+    lock
+    faceplayer
+    msgbox ("I'm stocking up on Paralyz Heals\n"
+            "before I fight Lyrica.")
+    msgbox ("I don't want to risk losing a turn\n"
+            "to her electric type POKEMON.")
+    release
+}

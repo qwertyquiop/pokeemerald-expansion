@@ -1,0 +1,42 @@
+{
+  "id": "MAP_SHADED_FOREST",
+  "name": "ShadedForest",
+  "layout": "LAYOUT_SHADED_FOREST",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_Shaded_Forest",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 56,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 57,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE3",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 55,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE3",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

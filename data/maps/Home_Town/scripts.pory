@@ -1,0 +1,113 @@
+raw `
+Home_Town_MapScripts::
+	.byte 0
+`
+
+//Environment
+script Garden_Interact {
+    lockall
+    msgbox("Mom's garden!\n"
+            "...better leave it alone.")
+    releaseall
+}
+
+script Lavender_Sign {
+    lockall
+    msgbox ("The sign reads, 'Professor Lavender.'\n"
+            "...looks like this is the place.")
+    releaseall
+}
+
+script BackyardItem {
+    lockall
+    giveitem(ITEM_POTION)
+    setflag(FLAG_ITEM_ROUTE_104_POTION)
+    removeobject(5)
+    releaseall
+}
+
+//NPCS
+script TestingGirl {
+    getpartysize
+
+    if(var(VAR_RESULT) >= 1){
+    lock
+    faceplayer
+    msgbox ("Wait, you were on your\n"
+            "way to get a POKEMON?")
+    msgbox("You're lucky! It looks cute!")
+    release
+    }
+
+    else {
+    lock
+    faceplayer
+    msgbox ("Are you on your way to Miss Lavender's?\n"
+            "What?")
+    msgbox("How do I know you're not going somewhere\n"
+            "else?")
+    msgbox("You have a look on your face. That's why!")
+    release   
+    }
+
+}
+
+script SeashellBoy {
+    lock
+    faceplayer
+    msgbox ("I'm collecting sea shells!")
+    release
+}
+
+script SeashellBrother {
+    lock
+    faceplayer
+    msgbox ("He's only collecting the rocks...")
+    release
+}
+
+script EXPALLTEST {
+    lockall
+    faceplayer
+    msgbox("Exp. All Test")
+    giveitem(ITEM_EXP_SHARE)
+    releaseall
+}
+
+script SafetyScientist {
+    getpartysize
+
+    if(var(VAR_RESULT) >= 1){
+    lockall
+    msgbox ("Great! You got your POKEMON!\n"
+            "Now I can leave this spot!")
+    applymovement(OBJ_EVENT_ID_PLAYER, StepBack)
+    applymovement(1, ScientistLeave)
+    waitmovement(1)
+    removeobject(1)
+    setflag(FLAG_UNUSED_0x021)
+    releaseall
+    }
+
+    else{
+        lockall
+        msgbox ("I'm studying the POKEMON\n"
+                "in this patch of grass.")
+        msgbox("If you don't have a POKEMON\n"
+                "yet, I can't let you through.")
+        releaseall
+    }
+}
+
+//Movement
+movement StepBack {
+    walk_left * 1
+    face_right
+}
+
+movement ScientistLeave {
+    walk_left * 1
+    face_down
+    walk_down * 7
+
+}

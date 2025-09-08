@@ -1,0 +1,37 @@
+{
+  "id": "MAP_PLAYER_ROOM",
+  "name": "Player_room",
+  "layout": "LAYOUT_PLAYER_ROOM",
+  "music": "MUS_EVER_GRANDE",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_PLAYER_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "WarpOptions"
+    }
+  ]
+}

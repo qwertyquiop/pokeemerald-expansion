@@ -1,0 +1,321 @@
+mapscripts Lav_lab_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_2, 0: StarterEvent
+    ]
+}
+
+//Starter Choosing
+script FireStarter {
+    lock
+    getpartysize
+    if(var(VAR_RESULT) >= 1){
+        lockall
+        msgbox("Probably shouldn't take more than 1!")
+        releaseall
+    }
+    else{
+    showmonpic(SPECIES_FENNEKIN, 10, 3)
+    msgbox("Choose Fennekin?", MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_FENNEKIN, 5, ITEM_ORAN_BERRY)
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox("Recieved Fennekin!")
+        removeobject(1)
+        setflag(FLAG_UNUSED_0x020)
+        setvar(VAR_UNUSED_0x408B, 1)
+        setflag(FLAG_SYS_POKEMON_GET)
+        call(NicknamePartyMon)
+    }
+    else {
+        hidemonpic
+        msgbox("Choose wisely!")
+    }
+    waitmessage
+    releaseall
+    end
+    }
+}
+
+script WaterStarter {
+    lock
+    getpartysize
+    if(var(VAR_RESULT) >= 1){
+        lockall
+        msgbox("Probably shouldn't take more than 1!")
+        releaseall
+    }
+    else{
+    showmonpic(SPECIES_TOTODILE, 10, 3)
+    msgbox("Choose Totodile?", MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_TOTODILE, 5, ITEM_ORAN_BERRY)
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox("Recieved Totodile!")
+        removeobject(2)
+        setflag(FLAG_UNUSED_0x020)
+        setvar(VAR_UNUSED_0x408B, 1)
+        setflag(FLAG_SYS_POKEMON_GET)
+        call(NicknamePartyMon)
+    }
+    else {
+        hidemonpic
+        msgbox("Choose wisely!")
+    }
+    waitmessage
+    releaseall
+    end
+    }
+}
+
+script GrassStarter {
+    lock
+    getpartysize
+    if(var(VAR_RESULT) >= 1){
+        lockall
+        msgbox("Probably shouldn't take more than 1!")
+        releaseall
+    }
+    else{
+    showmonpic(SPECIES_SNIVY, 10, 3)
+    msgbox("Choose Snivy?", MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_SNIVY, 5, ITEM_ORAN_BERRY)
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox("Recieved Snivy!")
+        removeobject(3)
+        setflag(FLAG_UNUSED_0x020)
+        setvar(VAR_UNUSED_0x408B, 1)
+        setflag(FLAG_SYS_POKEMON_GET)
+        call(NicknamePartyMon)
+    }
+    else {
+        hidemonpic
+        msgbox("Choose wisely!")
+    }
+    waitmessage
+    releaseall
+    end
+    }
+}
+
+script NicknamePartyMon{
+
+    msgbox ("Nickname your POKEMON?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+    }
+    call(DexGive)
+}
+
+script LabDialogue1 {
+    lockall
+    faceplayer
+    msgbox ("Prof. Lavender is quite short, so we\n"
+            "often have to help her reach things.")
+    releaseall
+}
+
+script LabDialogue2 {
+    lockall
+    faceplayer
+    msgbox("We're studying the recent influx\n"
+            "of ''Titan'' POKEMON.")
+    releaseall
+}
+
+script LabDialogue3 {
+    lockall
+    msgbox("...")
+    msgbox("(He's busy enjoying his coffee...)")
+    releaseall
+}
+
+script LavenderIdle {
+    getpartysize
+
+    if(var(VAR_RESULT) >= 1){
+    lock
+    faceplayer
+    msgbox("How's the adventure going?")
+    release  
+    }
+
+    else {
+    lock
+    faceplayer
+    msgbox ("Go ahead and pick one!")
+    release
+    }
+}
+
+script StarterEvent {
+    getpartysize
+
+    if (var(VAR_RESULT) == 0){
+    lockall
+    applymovement(4,Emotions)
+    waitmovement(4)
+    msgbox("Oh!\n"
+            "You're right on time!")
+    waitmessage
+    applymovement(4,LookaroundLav)
+    waitmovement(4)
+    msgbox("Well... Not really,\n"
+            "but that's fine! Great even!")
+    waitmessage
+    applymovement(4,RunLav)
+    waitmovement(4)
+    msgbox("I wanted to see you because...\n"
+            "I'm giving you your own POKEMON!")
+    waitmessage
+    msgbox("Fun! Right?!\n"
+           "...Anyways, you might not know this," )
+    waitmessage
+    msgbox("But I'm looking into the sudden\n"
+            "appearance of ''Titan'' POKEMON.")
+    waitmessage
+    msgbox("These POKEMON are apparently much\n"
+            "stronger than others of their kind.")
+    waitmessage
+    msgbox("I wanted to enlist you to help study\n"
+            "them. What do you think?")
+    waitmessage
+    msgbox("Like I said, I'll throw in a free POKEMON\n"
+            "to help you.")
+    waitmessage
+    msgbox("You'll do it?! Great! Fantastic\n"
+            "Even!")
+    waitmessage
+    applymovement(4,Jump)
+    waitmovement(4)
+    msgbox("Here, come with me.")
+    waitmessage
+    applymovement(4, BlockLav)
+    applymovement(OBJ_EVENT_ID_PLAYER, PlayerFollow)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    waitmovement(4)
+    msgbox("You can go ahead and take your pick.\n"
+            "These POKEMON are quite rare, you know!")
+    waitmessage
+    setvar(VAR_TEMP_2, 1)
+    setvar(VAR_UNUSED_0x408B, 0)
+    releaseall
+    }
+}
+
+script PushUp {
+    if(var(VAR_UNUSED_0x408B) == 0){
+    lockall
+    applymovement(4,Emotions)
+    waitmovement(4)
+    msgbox("Wait! I thought you wanted a POKEMON!")
+    applymovement(OBJ_EVENT_ID_PLAYER,UP)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(4,FaceToRight)
+    waitmovement(4)
+    releaseall
+    }
+}
+
+script DexGive {
+    lockall
+    msgbox("Oh! Before I forget!")
+    applymovement(OBJ_EVENT_ID_PLAYER,FacetoLeft)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox("Take this POKEDEX!\n"
+            "It's quite handy to have.")
+    setflag(FLAG_SYS_POKEDEX_GET)
+    setflag(FLAG_SYS_NATIONAL_DEX)
+    special(EnableNationalPokedex)
+    setflag(FLAG_ADVENTURE_STARTED)
+    special(SetUnlockedPokedexFlags)
+    setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox("{PLAYER} got a POKEDEX!")
+    msgbox("Take these, too. Catch some POKEMON!")
+    giveitem(ITEM_POKE_BALL, 10)
+    msgbox("Now, as for your first steps...")
+    msgbox("I'd suggest challenging the gym at\n"
+            "Sunset City.")
+    msgbox("You can get there by cutting\n"
+            "through Nandta Town, just past Route 1.")
+    msgbox("Good luck out there!\n"
+            "I'll be rooting for you!")
+    setrespawn(HEAL_LOCATION_HOME_TOWN)
+    setvar(VAR_UNUSED_0x404E, 0)
+    setflag(FLAG_UNUSED_0x023)
+    releaseall  
+}
+
+script PushLeft {
+    lockall
+    applymovement(4,Emotions)
+    waitmovement(4)
+    msgbox("Wait! I thought you wanted a POKEMON!")
+    applymovement(OBJ_EVENT_ID_PLAYER,LEFT)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    releaseall
+}
+
+//Movement
+
+movement Emotions {
+    emote_exclamation_mark
+    face_down
+}
+
+movement FacetoLeft {
+    face_left
+    
+}
+movement FaceToRight {
+    face_right
+}
+
+movement Jump {
+    jump_in_place_down * 2
+}
+movement LookaroundLav {
+    face_left
+    face_right
+    face_left
+}
+
+movement RunLav {
+    face_left
+    walk_fast_left * 6
+    face_down
+    walk_fast_down * 3
+    
+}
+
+movement BlockLav {
+    face_right
+    walk_right * 9
+    face_up
+    walk_up *5
+    face_right
+}
+
+movement PlayerFollow {
+    walk_up
+    face_right
+    walk_right * 10
+    face_up
+    walk_up * 5
+    face_left
+    
+}
+movement UP {
+    face_up
+    walk_up
+}
+
+movement LEFT {
+    face_left
+    walk_left
+}

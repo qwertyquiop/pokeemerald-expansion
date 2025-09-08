@@ -1,0 +1,161 @@
+{
+  "id": "MAP_CUSTOM_ROUTE1",
+  "name": "CustomRoute1",
+  "layout": "LAYOUT_CUSTOM_ROUTE1",
+  "music": "MUS_ROUTE101",
+  "region_map_section": "MAPSEC_ROUTE_1",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_HOME_TOWN",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_NANDTA_TOWN",
+      "offset": 22,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 2,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Unarmedgirl",
+      "flag": "FLAG_UNUSED_0x022"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Defeatedbugcatcher",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 34,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route1Youngster",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 6,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route1Lass",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "x": 35,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "RivalBattle1",
+      "flag": "FLAG_UNUSED_0x023"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NoPokemon"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NoPokemon"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NoPokemon"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNUSED_0x404E",
+      "var_value": "0",
+      "script": "RivalEvent"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNUSED_0x404E",
+      "var_value": "0",
+      "script": "RivalEventRight"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNUSED_0x404E",
+      "var_value": "0",
+      "script": "RivalEventLeft"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NandtaSign"
+    }
+  ]
+}
