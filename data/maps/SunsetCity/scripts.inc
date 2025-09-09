@@ -1,6 +1,6 @@
 SunsetCity_MapScripts::
 # 2 "data/maps/SunsetCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, RemoveGrunts
+	map_script MAP_SCRIPT_ON_RESUME, RemoveGrunts
 	.byte 0
 
 

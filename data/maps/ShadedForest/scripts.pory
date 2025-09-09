@@ -1,1 +1,110 @@
 mapscripts ShadedForest_MapScripts {}
+
+//Rival Notices Player
+script RivalNoticeL {
+    if (flag(FLAG_UNUSED_0x027) == FALSE) {
+    lock
+    applymovement(1, ShadedNotice)
+    waitmovement(1)
+    msgbox("Hey! {PLAYER}!")
+    applymovement(1,ShadedWalktoL)
+    waitmovement(1)
+    call(ShadedFollow)
+    }
+}
+
+script RivalNoticeR{
+    if (flag(FLAG_UNUSED_0x027) == FALSE) {
+    lock
+    applymovement(1, ShadedNotice)
+    waitmovement(1)
+    msgbox("Hey! {PLAYER}!")
+    applymovement(1,ShadedWalktoR)
+    waitmovement(1)
+    call(ShadedFollow)
+    }
+}
+
+script RivalNoticeMid {
+    if (flag(FLAG_UNUSED_0x027) == FALSE) {
+    lock
+    applymovement(1, ShadedNotice)
+    waitmovement(1)
+    msgbox("Hey! {PLAYER}!")
+    applymovement(1,ShadedWalktoMid)
+    waitmovement(1)
+    call(ShadedFollow)
+    }
+
+}
+
+//Dialogue
+script ShadedFollow {
+    msgbox("I'm trying to get through this forest,\n"
+            "but I have no idea where I'm going...")
+    msgbox("Want to partner up? We can get some\n"
+            "training in at the same time.")
+    waitmessage
+    dynmultichoice(
+        0, // Tiles from left
+        0, // Tiles from top
+        TRUE, // Ignore B press
+        3, // Max options before scroll
+        0, // Initial selected option
+        DYN_MULTICHOICE_CB_NONE, // Callbacks
+        "Yes", // Choice 1
+        "Absolutely not", // Choice 2
+    )
+    if(var(VAR_RESULT) == 0) {
+        msgbox("Okay! Sweet!")
+        msgbox("You let Ryan tag along.")
+        playfanfare(MUS_REGISTER_MATCH_CALL)
+        waitfanfare
+        setfollowernpc(1, FNPC_WHITE_OUT, FollowingDialogueShaded, PARTNER_RYAN)
+    }
+    if(var(VAR_RESULT) == 1) {
+        msgbox("Come on, please?")
+        dynmultichoice(0, // Tiles from left
+        0, // Tiles from top
+        TRUE, // Ignore B press
+        3, // Max options before scroll
+        0, // Initial selected option
+        DYN_MULTICHOICE_CB_NONE, // Callbacks)
+        "OK", //Choice 1
+        )
+        if(var(VAR_RESULT) == 0) {
+        msgbox("Okay! Sweet!")
+        msgbox("You let Ryan tag along... reluctantly.")
+        playfanfare(MUS_TOO_BAD)
+        waitfanfare
+        setfollowernpc(1, FNPC_WHITE_OUT, FollowingDialogueShaded, PARTNER_RYAN)
+    }
+
+    releaseall
+    }    
+}
+
+script FollowingDialogueShaded {
+    msgbox("You know where to go, right?")
+    releaseall
+}
+//Movement
+movement ShadedNotice {
+    emote_exclamation_mark
+}
+
+movement ShadedWalktoL {
+    walk_down * 2
+    walk_left
+    walk_down * 2
+}
+
+movement ShadedWalktoR {
+    walk_down * 2
+    walk_right
+    walk_down * 2
+}
+
+movement ShadedWalktoMid {
+    walk_down * 4
+}

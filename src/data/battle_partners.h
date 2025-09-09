@@ -103,3 +103,56 @@
             },
         },
     },
+#line 45
+    [DIFFICULTY_NORMAL][PARTNER_RYAN] =
+    {
+#line 46
+        .trainerName = _("Ryan"),
+#line 47
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 48
+        .trainerPic = TRAINER_BACK_PIC_BRENDAN,
+        .encounterMusic_gender =
+#line 50
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 52
+            .species = SPECIES_ROCKRUFF,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 55
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 54
+            .lvl = 14,
+#line 53
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 57
+            .species = SPECIES_FLETCHLING,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 60
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 59
+            .lvl = 14,
+#line 58
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 62
+            .species = SPECIES_RIOLU,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 65
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 64
+            .lvl = 16,
+#line 63
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },

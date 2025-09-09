@@ -1,5 +1,5 @@
 mapscripts SunsetCity_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: RemoveGrunts
+    MAP_SCRIPT_ON_RESUME: RemoveGrunts
 }
 
 script BiggerThanItLooks {

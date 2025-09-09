@@ -41,3 +41,25 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_RYAN ===
+Name: Ryan
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+
+Rockruff
+Jolly Nature
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Fletchling
+Adamant Nature
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Riolu
+Jolly Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe

@@ -4,6 +4,7 @@ mapscripts SunsetGymStage_MapScripts {
     ]
 }
 
+//Gym Leader
 script LeaderCutscene {
     applymovement(OBJ_EVENT_ID_PLAYER, MoveToStage)
     waitmovement(OBJ_EVENT_ID_PLAYER)
